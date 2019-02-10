@@ -1,5 +1,5 @@
 {
-  "name": "red-contrib-nbiot-connector",
+  "name": "@mm1technology/red-contrib-nbiot-connector",
   "version": "1.0.0",
   "description": "connector to NB-IoT relay service from mm1 Technology",
   "main": "nbiot-connector.js",
@@ -12,10 +12,7 @@
     "connector",
     "mm1 Technology"
   ],
-  "author": {
-    "name": "Lyn Matten",
-    "email": "l.matten@mm1-technology.de"
-  },
+  "author": "Lyn Matten <l.matten@mm1-technology.de>",
   "license": "MIT",
   "node-red": {
     "nodes": {
@@ -24,12 +21,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/XXX/my_package.git"
+    "url": "git+https://github.com/XXX/my_package.git"
   },
   "dependencies": {
     "moment": "^2.23.0",
     "request": "^2.88.0",
     "socket.io": "^2.2.0",
     "socket.io-client": "^2.2.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/XXX/my_package/issues"
+  },
+  "homepage": "https://github.com/XXX/my_package#readme",
+  "devDependencies": {}
 }
