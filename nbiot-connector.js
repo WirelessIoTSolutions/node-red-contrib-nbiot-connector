@@ -15,7 +15,10 @@
 const request = require('request');
 const moment = require('moment');
 
-
+/**
+ *
+ * @param RED
+ */
 module.exports = function(RED) {
     function NbiotConnectorNode(config) {
         RED.nodes.createNode(this,config);
@@ -69,9 +72,10 @@ module.exports = function(RED) {
 
 
                     let msgStr = new Buffer(data.data, 'base64').toString("ascii");
-                    let msgJSON = JSON.parse(msgStr);
+                    //let msgJSON = JSON.parse(msgStr);
 
-                    msgObj.data = msgJSON;
+                    //msgObj.data = msgJSON;
+                    msgObj.data = msgStr;
 
                     msg.payload = msgObj;
                     node.send(msg);
