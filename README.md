@@ -19,4 +19,17 @@ If the Relay Service receives messages from your devices they will pushed to the
 
 ## Message structure
 
+    { 
+       imsi: "{device imsi}", 
+       data: "{raw payload}", 
+       timestamp: “{timestamp of receiption}“,  
+       direction: "{uplink/downlink}" 
+    }
 
+
+The raw data should be decoded for better usage and parsed to JSON:
+
+    let msgStr = new Buffer(data.data, 'base64').toString("ascii");
+    let msgJSON = JSON.parse(msgStr);
+    
+    
