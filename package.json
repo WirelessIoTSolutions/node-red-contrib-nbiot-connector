@@ -10,7 +10,9 @@
     "NB-IoT",
     "nbiot",
     "connector",
-    "mm1 Technology"
+    "mm1 Technology",
+    "node-red"
+
   ],
   "author": "Lyn Matten <l.matten@mm1-technology.de>",
   "license": "MIT",
