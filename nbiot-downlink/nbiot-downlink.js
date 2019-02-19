@@ -129,9 +129,7 @@ module.exports = function(RED) {
             icon: "bridge.png",
             label: function () {
                 return this.name || "NBIoT downlink"
-            },
-
-            align: "right",
+            }
         }
 
     });
