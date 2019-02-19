@@ -1,8 +1,8 @@
 {
   "name": "@mm1technology/node-red-contrib-nbiot-connector",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "connector to NB-IoT relay service from mm1 Technology",
-  "main": "nbiot-connector.js",
+  "main": "nbiot-connector/nbiot-connector.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,7 +19,9 @@
   "license": "MIT",
   "node-red": {
     "nodes": {
-      "nbiot-connector": "nbiot-connector.js"
+      "nbiot-connector": "nbiot-connector/nbiot-connector.js",
+      "nbiot-downlink": "nbiot-downlink/nbiot-downlink.js",
+      "nbiot-uplink": "nbiot-uplink/nbiot-uplink.js"
     }
   },
   "repository": {
