@@ -22,7 +22,7 @@ const https = require('https');
  */
 module.exports = function(RED) {
     function NbiotUplinkNode(config) {
-        RED.nodes.createNode(this,config);
+        RED.nodes.createNode(this, config);
         var node = this;
         this.connector = RED.nodes.getNode(config.connector);
         this.name = config.name;
@@ -30,20 +30,34 @@ module.exports = function(RED) {
         this.token = this.connector.credentials.token;
 
 
-        node.on('input', function(msg) {
+        node.on("input", function(msg) {
 
-            node.log("msg: ", msg);
 
-            if(node.server !== "" && node.server !== "") {
+            if(msg.hasOwnProperty("payload")  && msg.payload.hasOwnProperty("imsi")  && node.server !== "" && node.server !== "") {
 
-                let apiPath = node.server + "/api/device/" + msg.payload.imsi + "/message";
+
                 let bearerToken = 'Bearer ' + node.token;
 
                 let postRequest = null,
                     data = JSON.stringify({"message": msg.payload.message.trim()});
 
+
+                //eleminate http(s) prefix if existing because cause problem with postRequest
+                let serverUrl = "";
+                if(node.server.includes("http")=== true) {
+
+                    serverUrl = node.server.split("//")[1];
+
+                }
+                else {
+                    serverUrl = node.server;
+                }
+
+                let apiPath = "/api/device/" + msg.payload.imsi + "/message";
+
+
                 let postOptions = {
-                    hostname: node.server,
+                    hostname: serverUrl,
                     path: apiPath,
                     method: 'POST',
                     headers:
@@ -57,15 +71,15 @@ module.exports = function(RED) {
                 postRequest = https.request(postOptions, function (res) {
                     res.setEncoding('utf8');
                     res.on('data', function (chunk) {
-                        node.log('Response from the UDP Relay Service: ', chunk);
+                        node.log('Response from the UDP Relay Service: ' + chunk);
 
                     });
                 });
                 postRequest.on('error', function (e) {
-                    node.log(imsi, ': Problem with POST request: ' + e.message);
+                    node.log(msg.payload.imsi + ': Problem with POST request: ' + e.message);
 
                 });
-                node.log('Sending POST request to URS - data: ', data);
+                node.log('Sending POST request to URS - data: ' +JSON.stringify(data));
                 postRequest.write(data);
                 postRequest.end();
 
