@@ -13,11 +13,13 @@ For more information please visit https://www.mm1-technology.de
 
 To connect to the NB-IoT Relay Service you need the url of the relay service and your api key.
 
-Once you use the output plugin in your flow, you need to open the settings, fill in the url and api token and after saving the plugin automatically connects to the relay service.
+There is a config node so that one configuration can be used by multiple nodes.
 
-If the Relay Service receives messages from your devices they will pushed to the plugin and received in your flow as msg.payload.
+Once you use the downlink or uplink node in your flow, you need to open the settings, fill in the url and api token and after saving the nodes automatically connects to the relay service.
 
-## Message structure
+If the Relay Service receives messages from your devices they will pushed to the downlink node and received in your flow as msg.payload.
+
+## downlink message structure
 
     { 
        imsi: "{device imsi}", 
@@ -33,3 +35,13 @@ The raw data should be decoded for better usage and parsed to JSON:
     let msgJSON = JSON.parse(msgStr);
     
     
+## uplink message structure
+
+sending a message is quit easy. Simply create a json containing the imsi and the message:
+
+    { 
+       "imsi": 123456789,
+       "message": "LED=1"
+    }
+    
+and pass it to the uplink node.
