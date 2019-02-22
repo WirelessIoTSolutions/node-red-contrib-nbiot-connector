@@ -4,7 +4,7 @@
  * easy access and integration of NB-IoT devices
  * ATTENTION: Need a subscription to Nb-IoT relay service and client library on IoT device to work
  * @author Lyn Matten
- * @copyright (C) 2018 mm1 Technology GmbH - all rights reserved.
+ * @copyright (C) 2019 mm1 Technology GmbH - all rights reserved.
  * @licence MIT licence
  *
  * Find out more about mm1 Technology:

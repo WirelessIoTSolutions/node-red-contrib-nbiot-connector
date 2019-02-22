@@ -1,5 +1,14 @@
 # CHANGELOG
 
-# 1.0.0 (2019-02-10)
+## 1.0.2 (2019-02-22)
+* redesign of solution
+* added config node
+* split into downlink node and uplinke node
+* updated readme.md
+
+## 1.0.1 (2019-02-15)
+* small fixes to enable listing in node-red libray
+
+## 1.0.0 (2019-02-10)
 
 * initial version
