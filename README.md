@@ -2,6 +2,8 @@
 
 __A plugin for Node-RED for easy connection to mm1 Technology NB-IoT connector__
 
+![mm1 Technology](images/mm1T_Logo_Square.png)
+
 ## Description
 
 Connects to NB-IoT relay service from mm1 Technology for easy access and integration of NB-IoT devices.
@@ -10,6 +12,20 @@ For more information please visit https://www.mm1-technology.de
 *ATTENTION: Need a subscription to NB-IoT relay service and client library on IoT device to work*
 
 ## Setup
+
+### Node-RED
+
+A good documentation on how to install and use Node-RED can be found at the official Node-RED website: https://nodered.org/docs/getting-started/installation
+
+### NB-IoT Connector
+
+Via the Node-RED menu 'palette' new plugins cann be installed and remove. Simply open the menu, chose the install tab and type 'nbiot' into the search. The nbiot connector should be the first entry.
+
+![Installation menu node-RED](images/install_menu.png)
+
+After successful installation two new nodes are visible:
+
+![New Nodes](images/new_nodes.png)
 
 To connect to the NB-IoT Relay Service you need the url of the relay service and your api key.
 

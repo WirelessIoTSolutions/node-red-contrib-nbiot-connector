@@ -1,6 +1,6 @@
 {
   "name": "@mm1technology/node-red-contrib-nbiot-connector",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "connector to NB-IoT relay service from mm1 Technology",
   "main": "nbiot-connector/nbiot-connector.js",
   "scripts": {
