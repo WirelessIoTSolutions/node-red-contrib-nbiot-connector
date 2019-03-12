@@ -27,11 +27,18 @@ After successful installation two new nodes are visible:
 
 ![New Nodes](images/new_nodes.png)
 
-To connect to the NB-IoT Relay Service you need the url of the relay service and your api key.
+To connect to the NB-IoT Relay Service you need the url of the relay service and your api key. 
+Fill in the url and api token field that pops up after clicking on the icon demonstrated in the next picture:
+
+![Nbiot Downlink Setup](images/nbiot_downlink_setup.png)
+
+After saving, the nodes automatically connect to the relay service.
 
 There is a config node so that one configuration can be used by multiple nodes.
 
-Once you use the downlink or uplink node in your flow, you need to open the settings, fill in the url and api token and after saving the nodes automatically connects to the relay service.
+The minimum amount of nodes required to illustrate the received data looks as such(nbiot downlink and debug nodes):
+
+![Nbiot Downlink Constellation](images/nbiot_downlink_constellation.png)
 
 If the Relay Service receives messages from your devices they will pushed to the downlink node and received in your flow as msg.payload.
 
@@ -44,8 +51,8 @@ If the Relay Service receives messages from your devices they will pushed to the
        direction: "{uplink/downlink}" 
     }
 
-
-The raw data should be decoded for better usage and parsed to JSON:
+	
+The raw data can be decoded for better usage and parsed to JSON:
 
     let msgStr = new Buffer(data.data, 'base64').toString("ascii");
     let msgJSON = JSON.parse(msgStr);
