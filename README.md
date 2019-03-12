@@ -32,9 +32,9 @@ To connect to the NB-IoT Relay Service you need the url of the relay service and
 There is a config node so that one configuration can be used by multiple nodes.
 
 
-If the Relay Service receives messages from your devices they will pushed to the downlink node and received in your flow as msg.payload.
-
 ## downlink message structure
+
+If the Relay Service receives messages from your devices they will pushed to the downlink node and received in your flow as msg.payload.
 
     { 
        imsi: "{device imsi}", 
@@ -61,7 +61,7 @@ The raw data can be decoded for better usage and parsed to JSON:
     
 ## uplink message structure
 
-sending a message is quit easy. Simply create a json containing the imsi and the message:
+sending a message is quiet easy. Simply create a json containing the imsi and the message:
 
     { 
        "imsi": 123456789,
